@@ -5,12 +5,8 @@
 ### Bacharelado em Ciência da Computação
 
 [![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
-<<<<<<< HEAD
-[![GCC](https://img.shields.io/badge/GCC-14.2-informational?style=for-the-badge&logo=gnu)](https://gcc.gnu.org/)
-=======
 [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![GCC](https://img.shields.io/badge/GCC-16.2.1-informational?style=for-the-badge&logo=gnu)](https://gcc.gnu.org/)
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge&logo=apache)](LICENSE)
 
@@ -56,21 +52,12 @@ O principal objetivo é aplicar na prática os conceitos matemáticos e computac
 
 ```text
 ├── 01. Algoritmo de Corte/
-<<<<<<< HEAD
 │   ├── Cohen-Sutherland.c     # Implementação completa e CLI do corte de retas
-=======
-│   ├── Cohen-Sutherland.c     # Implementação da lógica de corte de retas
-│   ├── main.c                 # Função principal e casos de teste
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 │   └── Dockerfile             # Configuração do ambiente Docker
 ├── .gitattributes
 ├── .gitignore
 ├── LICENSE                    # Termos de licença Apache 2.0
 └── README.md                  # Documentação do projeto
-<<<<<<< HEAD
-
-=======
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 ```
 
 ---
@@ -79,27 +66,7 @@ O principal objetivo é aplicar na prática os conceitos matemáticos e computac
 
 ### 01. Algoritmo de Corte (Clipping)
 
-<<<<<<< HEAD
 O módulo aborda o problema de recorte de primitivas 2D em relação a uma janela de visualização (*viewport* / *clipping window* delimitada por $x_{min}, x_{max}, y_{min}, y_{max}$ adaptada para coordenadas de tela, onde $y$ cresce de cima para baixo).
-
-#### 🔹 Algoritmo de Cohen-Sutherland
-
-Divide o plano bidimensional em 9 regiões através de códigos binários de 4 bits (**Outcodes**):
-
-| Código (Bit) | Significado | Condição |
-| --- | --- | --- |
-| **Bit 3 (CIMA)** | Acima da janela | $y < y_{min}$ |
-| **Bit 2 (BAIXO)** | Abaixo da janela | $y > y_{max}$ |
-| **Bit 1 (DIREITA)** | À direita da janela | $x > x_{max}$ |
-| **Bit 0 (ESQUERDA)** | À esquerda da janela | $x < x_{min}$ |
-
-**Regras de Decisão:**
-
-1. **Aceitação Trivial:** Se `(codeA | codeB) == 0`, ambos os pontos estão dentro da janela e o segmento é desenhado integralmente.
-2. **Rejeição Trivial:** Se `(codeA & codeB) != 0`, ambos os pontos compartilham uma região externa comum e a reta é completamente descartada.
-3. **Corte e Interseção:** Caso contrário, calcula-se o ponto de interseção da reta com as bordas da janela e reavalia-se iterativamente.
-=======
-O módulo aborda o problema de recorte de primitivas 2D em relação a uma janela de visualização (*viewport* / *clipping window* delimitada por $x_{min}, x_{max}, y_{min}, y_{max}$).
 
 #### 🔹 Algoritmo de Cohen-Sutherland
 Divide o plano bidimensional em 9 regiões através de códigos binários de 4 bits (**Outcodes**):
@@ -112,66 +79,43 @@ Divide o plano bidimensional em 9 regiões através de códigos binários de 4 b
 | **Bit 0 (Left)** | À esquerda da janela | $x < x_{min}$ |
 
 **Regras de Decisão:**
-1. **Aceitação Trivial:** Se `(code1 | code2) == 0`, ambos os pontos estão dentro da janela e o segmento é desenhado integralmente.
-2. **Rejeição Trivial:** Se `(code1 & code2) != 0`, ambos os pontos compartilham uma região externa comum e a reta é completamente descartada.
-3. **Corte e Interseção:** Caso contrário, calcula-se o ponto de interseção da reta com as bordas da janela e reavalia-se recursivamente/iterativamente.
->>>>>>> 74bc773 (Cohen Sutherland concluido)
+
+1. **Aceitação Trivial:** Se `(codeA | codeB) == 0`, ambos os pontos estão dentro da janela e o segmento é desenhado integralmente.
+2. **Rejeição Trivial:** Se `(codeA & codeB) != 0`, ambos os pontos compartilham uma região externa comum e a reta é completamente descartada.
+3. **Corte e Interseção:** Caso contrário, calcula-se o ponto de interseção da reta com as bordas da janela e reavalia-se iterativamente.
 
 ---
 
 ## 🚀 Como Compilar e Executar
 
 ### Pré-requisitos
-<<<<<<< HEAD
 
 * Compilador C (`gcc` ou `clang`)
 * `docker` *(opcional, para ambiente isolado)*
-=======
-- Compilador C/C++ (`gcc` ou `clang`)
-- Utilitário `make` *(opcional)*
-- `docker` *(opcional, para ambiente isolado)*
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 
 ---
 
 ### Opção 1: Compilação Nativa (GCC / Clang)
 
 #### No Linux / macOS:
-<<<<<<< HEAD
 
-=======
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 ```bash
 # Entre na pasta do módulo
 cd "01. Algoritmo de Corte"
 
-<<<<<<< HEAD
 # Compile o arquivo fonte
 gcc -Wall -Wextra -O2 "Cohen-Sutherland.c" -o corte
 
 # Execute o programa
 ./corte
-
 ```
 
 #### No Windows (PowerShell / CMD com MinGW):
-
-=======
-# Compile com flags de otimização e warnings
-gcc -Wall -Wextra -O2 main.c Cohen-Sutherland.c -o corte
-
-# Execute o programa
-./corte
-```
-
-#### No Windows (PowerShell / CMD com MinGW):
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 ```powershell
 # Entre na pasta do módulo
 cd "01. Algoritmo de Corte"
 
 # Compile o executável
-<<<<<<< HEAD
 gcc -Wall -Wextra "Cohen-Sutherland.c" -o corte.exe
 
 # Execute
@@ -182,7 +126,7 @@ gcc -Wall -Wextra main.c Cohen-Sutherland.c -o corte.exe
 
 # Execute
 .\corte.exe
->>>>>>> 74bc773 (Cohen Sutherland concluido)
+>>>>>>> Desenvolvimento
 ```
 
 ---
@@ -200,44 +144,12 @@ docker build -t cg-corte .
 
 # Execute o contêiner de forma interativa
 docker run --rm -it cg-corte
-<<<<<<< HEAD
 
-=======
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 ```
 
 ---
 
 ## 🗺️ Roteiro de Tópicos (Roadmap)
-
-<<<<<<< HEAD
-* [x] **Algoritmos de Corte 2D (Clipping)**
-* [x] Cohen-Sutherland (Segmentos de reta)
-* [ ] Sutherland-Hodgman (Recorte de polígonos)
-
-
-* [ ] **Rasterização de Primitivas Gráficas**
-* [ ] Algoritmo DDA (Digital Differential Analyzer)
-* [ ] Algoritmo de Bresenham (Retas e Circunferências)
-
-
-* [ ] **Preenchimento de Áreas (Scanline & Flood Fill)**
-* [ ] **Transformações Geométricas 2D e 3D**
-* [ ] Translação, Rotação, Escala e Cisalhamento
-* [ ] Coordenadas Homogêneas e Matrizes de Transformação
-
-
-* [ ] **Projeções e Câmera Virtual**
-* [ ] Projeção Ortográfica
-* [ ] Projeção Perspectiva
-
-
-* [ ] **Iluminação e Shading**
-* [ ] Modelo de Reflexão de Phong
-* [ ] Sombreamento Flat e Gouraud
-
-
-=======
 - [x] **Algoritmos de Corte 2D (Clipping)**
   - [x] Cohen-Sutherland (Segmentos de reta)
   - [ ] Sutherland-Hodgman (Recorte de polígonos)
@@ -254,38 +166,22 @@ docker run --rm -it cg-corte
 - [ ] **Iluminação e Shading**
   - [ ] Modelo de Reflexão de Phong
   - [ ] Sombreamento Flat e Gouraud
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-<<<<<<< HEAD
 * **Linguagem:** C (Padrão C99 / C11)
 * **Compilador:** GCC / Clang
 * **Conteinerização:** Docker
 * **Versionamento:** Git & GitHub
-=======
-- **Linguagem:** C (Padrão C99 / C11) / C++
-- **Compilador:** GCC / Clang
-- **Conteinerização:** Docker
-- **Versionamento:** Git & GitHub
->>>>>>> 74bc773 (Cohen Sutherland concluido)
 
 ---
 
 ## 📄 Licença
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Este projeto está sob a licença [Apache 2.0](https://www.google.com/search?q=LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
-=======
 Este projeto está sob a licença [Apache 2.0](LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
 
 <div align="center">
   <sub>Desenvolvido para a matéria de Computação Gráfica — Bacharelado em Ciência da Computação.</sub>
 </div>
->>>>>>> 74bc773 (Cohen Sutherland concluido)
-=======
-Este projeto está sob a licença [Apache 2.0](https://www.google.com/search?q=LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
->>>>>>> 44176c9fa4fccb4ab8336cef90658aee367b9531
