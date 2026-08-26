@@ -2,11 +2,19 @@
 
 typedef int ForaPP;
 
+<<<<<<< HEAD
 const int DENTRO   = 0b0000;
 const int ESQUERDA = 0b0001;
 const int DIREITA  = 0b0010;
 const int BAIXO    = 0b0100;
 const int CIMA     = 0b1000;
+=======
+const int DENTRO = 0b0000;
+const int ESQUERDA = 0b0001;
+const int DIREITA = 0b0010;
+const int BAIXO = 0b0100;
+const int CIMA = 0b1000;
+>>>>>>> 74bc773 (Cohen Sutherland concluido)
 
 float xmin;
 float xmax;
@@ -25,11 +33,19 @@ ForaPP VerificarCorte(double x, double y)
     }
 
     if (y < ymin) {
+<<<<<<< HEAD
         codigoFora |= BAIXO;
     }
     else if (y > ymax) {
         codigoFora |= CIMA;
     }
+=======
+        codigoFora |= CIMA;
+    }
+    else if (y > ymax) {
+        codigoFora |= BAIXO;
+    }
+>>>>>>> 74bc773 (Cohen Sutherland concluido)
 
     return (codigoFora);
 }

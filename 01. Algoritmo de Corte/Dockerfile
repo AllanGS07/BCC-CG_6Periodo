@@ -7,6 +7,8 @@ COPY Cohen-Sutherland.c .
 
 RUN gcc -static Cohen-Sutherland.c -o clipping
 
+
+# --------------------------------------------
 FROM alpine:latest
 
 WORKDIR /app
