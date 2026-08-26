@@ -21,15 +21,13 @@ ForaPP VerificarCorte(double x, double y)
 
     if (x < xmin){
         codigoFora |= ESQUERDA;
-    }
-    else if (x > xmax){
+    } else if (x > xmax){
         codigoFora |= DIREITA;
     }
 
     if (y < ymin){
         codigoFora |= BAIXO;
-    }
-    else if (y > ymax){
+    } else if (y > ymax){
         codigoFora |= CIMA;
     }
 
@@ -94,16 +92,13 @@ int CohenSutherland(double *xa, double *ya, double *xb, double *yb)
             if (fora & CIMA){
                 x = *xa + (*xb - *xa) * (ymax - *ya) / (*yb - *ya);
                 y = ymax;
-            }
-            else if (fora & BAIXO){
+            } else if (fora & BAIXO){
                 x = *xa + (*xb - *xa) * (ymin - *ya) / (*yb - *ya);
                 y = ymin;
-            }
-            else if (fora & DIREITA){
+            } else if (fora & DIREITA){
                 y = *ya + (*yb - *ya) * (xmax - *xa) / (*xb - *xa);
                 x = xmax;
-            }
-            else if (fora & ESQUERDA){
+            } else if (fora & ESQUERDA){
                 y = *ya + (*yb - *ya) * (xmin - *xa) / (*xb - *xa);
                 x = xmin;
             }
@@ -112,8 +107,7 @@ int CohenSutherland(double *xa, double *ya, double *xb, double *yb)
                 *xa = x;
                 *ya = y;
                 codigoForaA = VerificarCorte(*xa, *ya);
-            }
-            else{
+            } else{
                 *xb = x;
                 *yb = y;
                 codigoForaB = VerificarCorte(*xb, *yb);
@@ -160,12 +154,10 @@ int main(){
 
             if (visivel == 1){
                 MostrarReta("RESULTADO DO RECORTE", xap, yap, xbp, ybp);
-            }
-            else{
+            } else{
                 printf("\nA reta esta totalmente FORA da janela de visualizacao.\n");
             }
-        }
-        else if (opcao == 2){
+        } else if (opcao == 2){
             double deslocamentoX, deslocamentoY;
 
             printf("Digite o deslocamento em X: ");
@@ -179,15 +171,13 @@ int main(){
             MostrarReta("RESULTADO DO MOVIMENTO", xap, yap, xbp, ybp);
             printf("A nova reta esta dentro do PP, com fator de margem de 10%%.\n");
             printf("Iteracoes de ajuste: %d\n", contadorIteracoes);
-        }
-        else if (opcao == 3){
+        } else if (opcao == 3){
             contadorIteracoes = 0;
             EscalonarPontos(&xap, &yap, &xbp, &ybp);
 
             MostrarReta("RESULTADO DA ESCALONACAO", xap, yap, xbp, ybp);
             printf("Iteracoes realizadas: %d\n", contadorIteracoes);
-        }
-        else if (opcao != 0){
+        } else if (opcao != 0){
             printf("Opcao invalida.\n");
         }
     } while (opcao != 0);
