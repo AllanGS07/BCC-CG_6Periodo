@@ -277,6 +277,7 @@ docker run --rm -it cg-corte
 ## 📄 Licença
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Este projeto está sob a licença [Apache 2.0](https://www.google.com/search?q=LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
 =======
 Este projeto está sob a licença [Apache 2.0](LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
@@ -285,3 +286,6 @@ Este projeto está sob a licença [Apache 2.0](LICENSE). Consulte o arquivo `LIC
   <sub>Desenvolvido para a matéria de Computação Gráfica — Bacharelado em Ciência da Computação.</sub>
 </div>
 >>>>>>> 74bc773 (Cohen Sutherland concluido)
+=======
+Este projeto está sob a licença [Apache 2.0](https://www.google.com/search?q=LICENSE). Consulte o arquivo `LICENSE` para obter mais detalhes.
+>>>>>>> 44176c9fa4fccb4ab8336cef90658aee367b9531
