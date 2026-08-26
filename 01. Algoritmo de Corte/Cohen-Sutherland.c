@@ -146,8 +146,7 @@ int main(){
         printf("2 - Mover reta\n");
         printf("3 - Escalonar reta\n");
         printf("0 - Sair\n");
-        printf("Opcao: ");
-        scanf(" %d", &opcao);
+        printf("Opcao: "); fflush(stdout); scanf(" %d", &opcao);
 
         if (opcao == 1){
             int visivel = CohenSutherland(&xap, &yap, &xbp, &ybp);
@@ -160,10 +159,8 @@ int main(){
         } else if (opcao == 2){
             double deslocamentoX, deslocamentoY;
 
-            printf("Digite o deslocamento em X: ");
-            scanf(" %lf", &deslocamentoX);
-            printf("Digite o deslocamento em Y: ");
-            scanf(" %lf", &deslocamentoY);
+            printf("Digite o deslocamento em X: "); fflush(stdout); scanf(" %lf", &deslocamentoX);
+            printf("Digite o deslocamento em Y: "); fflush(stdout); scanf(" %lf", &deslocamentoY);
 
             MoverPontos(&xap, &yap, &xbp, &ybp, deslocamentoX, deslocamentoY);
             AjustarPontosMovidos(&xap, &yap, &xbp, &ybp);
