@@ -3,9 +3,9 @@ RUN apk add --no-cache build-base
 
 WORKDIR /app
 
-COPY main.c .
+COPY Cohen-Sutherland.c .
 
-RUN gcc -static main.c -o clipping
+RUN gcc -static Cohen-Sutherland.c -o clipping
 
 
 # --------------------------------------------

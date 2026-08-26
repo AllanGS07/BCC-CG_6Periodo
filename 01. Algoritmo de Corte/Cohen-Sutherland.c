@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 typedef int ForaPP;
+typedef int ForaPP;
 
 const int DENTRO = 0b0000;
 const int ESQUERDA = 0b0001;
