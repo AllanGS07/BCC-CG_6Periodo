@@ -7,6 +7,8 @@ COPY main.c .
 
 RUN gcc -static main.c -o clipping
 
+
+# --------------------------------------------
 FROM alpine:latest
 
 WORKDIR /app
